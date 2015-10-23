@@ -1,0 +1,53 @@
+{
+    "id": "cadvisor-influxdb",
+    "cpus": 0.5,
+    "mem": 512,
+    "constraints": [["hostname", "UNIQUE"]],
+    "acceptedResourceRoles": ["slave_public"],
+    "container":
+        {
+            "type": "DOCKER",
+            "docker":
+                {
+                    "image": "google/cadvisor:latest",
+                    "network": "BRIDGE",
+                    "portMappings":
+                        [
+                            {
+                                "hostPort": 0,
+                                "containerPort": 8080
+                            }
+                        ]
+                },
+            "volumes":
+                [
+                    {
+                        "containerPath": "/rootfs",
+                        "hostPath": "/",
+                        "mode": "RO"
+                    },
+                    {
+                        "containerPath": "/var/run",
+                        "hostPath": "/var/run",
+                        "mode": "RW"
+                    },
+                    {
+                        "containerPath": "/sys",
+                        "hostPath": "/sys",
+                        "mode": "RO"
+                    },
+                    {
+                        "containerPath": "/var/lib/docker",
+                        "hostPath": "/var/lib/docker/",
+                        "mode": "RO"
+                    }
+              ]
+        },
+    "args":
+        [
+            "-storage_driver", "influxdb",
+            "-storage_driver_db", "ca",
+            "-storage_driver_host", "ec2-52-89-50-37.us-west-2.compute.amazonaws.com:543"
+        ]
+}
+

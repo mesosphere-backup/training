@@ -1,0 +1,45 @@
+{
+    "apiVersion": "v1",
+    "kind": "Pod",
+    "metadata": {
+        "labels": {
+            "name": "nginx"
+        },
+        "name": "nginx",
+        "namespace": "default"
+    },
+    "spec": {
+        "containers": [
+            {
+                "image": "nginx:latest",
+                "name": "nginx",
+                "ports": [
+                    {
+                        "containerPort": 80
+                    }
+                ],
+                "resources": {
+                    "limits": {
+                        "cpu": "500m",
+                        "memory": "128Mi"
+                    }
+                },
+                "volumeMounts": [
+                    {
+                        "mountPath": "/usr/share/nginx/html",
+                        "name": "genvol",
+                        "readOnly": true
+                    }
+                ]
+            }
+        ],
+        "volumes": [
+            {
+                "hostPath": {
+                    "path": "/tmp/gen/"
+                },
+                "name": "genvol"
+            }
+        ]
+    }
+}
