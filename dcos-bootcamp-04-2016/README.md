@@ -1,7 +1,5 @@
 # DCOS bootcamp
 
-## Contents
-
 Training session at Mesosphere HQ on 2016-04-14.
 
 If you're not yet, please sign up and log into the DCOS Community Slack: [chat.mesosphere.com](http://chat.mesosphere.com/).
@@ -16,9 +14,9 @@ Going forward, we will call the directory you've installed the DCOS CLI in simpl
 
 Lastly, check if you can access the DCOS Dashboard and you're all set.
 
-The hands on sessions are:
+Sessions:
 
 1. [Containers &amp; Docker](docker/)
-1. [Mesos, Marathon and DCOS](dcos/)
-1. CI/CD
-1. Big Data
+1. [Mesos, Marathon and DCOS basics](dcos/)
+1. [CI/CD](ci-cd/)
+1. [Big Data](big-data/)
