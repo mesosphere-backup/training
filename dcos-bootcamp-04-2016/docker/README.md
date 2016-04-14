@@ -6,7 +6,7 @@ There are a few [valuable Docker](http://www.nkode.io/2014/08/24/valuable-docker
 
 Make sure you have your DCOS cluster per team up and running. Then do:
 
-    # get your team key from http://j.mp/velocity-2015-container-training 
+    # get your team key via the Slack channel
     $ chmod 600 ~/.ssh/your-team-key
     # add key once:
     ssh-add ~/.ssh/your-team-key
