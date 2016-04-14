@@ -1,4 +1,4 @@
-# DCOS
+# Mesos, Marathon and DCOS basics
 
 Architecture, system components and services.
 
