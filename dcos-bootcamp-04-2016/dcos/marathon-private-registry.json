@@ -1,0 +1,25 @@
+{
+    "id": "private-registry",
+    "cpus": 0.5,
+    "mem": 1024,
+    "instances": 1,
+    "container": {
+        "docker": {
+            "image": "registry"
+        },
+        "type": "DOCKER"
+    },
+    "env": {
+        "SETTINGS_FLAVOR": "local",
+        "STORAGE_PATH": "/docker_storage"
+    },
+    "acceptedResourceRoles": [
+        "slave_public"
+    ],
+    "constraints": [
+        [
+            "hostname",
+            "UNIQUE"
+        ]
+    ]
+}
