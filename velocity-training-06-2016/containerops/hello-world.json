@@ -1,0 +1,7 @@
+{
+  "id": "hw",
+  "instances": 1,
+  "cpus": 0.01,
+  "mem": 32,
+  "cmd": "while [ true ] ; do echo \"Hello world!\" ; sleep 10 ; done"
+}

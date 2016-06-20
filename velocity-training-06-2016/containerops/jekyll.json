@@ -1,0 +1,22 @@
+{
+  "id": "jekyll",
+  "instances": 1,
+  "cpus": 0.1,
+  "mem": 128,
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "mhausenblas/cicd-demo",
+      "network": "BRIDGE",
+      "portMappings": [
+        {
+          "containerPort": 4000,
+          "hostPort": 0
+        }
+      ]
+    }
+  },
+  "acceptedResourceRoles": [
+    "slave_public"
+  ]
+}

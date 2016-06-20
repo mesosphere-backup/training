@@ -1,0 +1,22 @@
+{
+  "id": "vipwebserver",
+  "cmd": "python -m http.server $PORT0",
+  "cpus": 0.1,
+  "mem": 32,
+  "instances": 1,
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "python:3.5.1-alpine",
+      "network": "HOST"
+    }
+  },
+  "portDefinitions": [
+    {
+      "port": 10001,
+      "labels": {
+        "VIP_0": "1.1.1.1:80"
+      }
+    }
+  ]
+}
