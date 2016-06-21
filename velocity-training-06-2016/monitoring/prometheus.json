@@ -1,0 +1,21 @@
+{
+  "id": "/monitoring/prometheus",
+  "cpus": 0.5,
+  "mem": 512,
+  "container": {
+    "docker": {
+      "type": "DOCKER",
+      "forcePullImage": true,
+      "image": "prom/prometheus:0.19.2",
+      "network": "BRIDGE",
+      "portMappings": [{
+        "containerPort": 9090,
+        "hostPort": 9090
+      }]
+    }
+  },
+  "requirePorts": true,
+  "acceptedResourceRoles": [
+    "*"
+  ]
+}

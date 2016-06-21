@@ -1,0 +1,27 @@
+{
+  "id": "/monitoring/grafana",
+  "cpus": 0.2,
+  "mem": 300,
+  "container": {
+    "docker": {
+      "type": "DOCKER",
+      "forcePullImage": true,
+      "image": "grafana/grafana:master",
+      "network": "BRIDGE",
+      "portMappings": [
+        {
+          "containerPort": 3000,
+          "hostPort": 3000
+        }
+      ]
+    }
+  },
+  "labels": {
+    "HAPROXY_0_VHOST": "grafana.example.com",
+    "HAPROXY_GROUP": "external"
+  },
+  "requirePorts": true,
+  "acceptedResourceRoles": [
+    "*"
+  ]
+}

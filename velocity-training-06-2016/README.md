@@ -17,6 +17,8 @@ Sessions:
 1. [Container 101](container101/)
 1. [Container operations](containerops/)
 1. [CI/CD](ci-cd/)
+1. [Monitoring](monitoring/)
+1. [Troubleshooting lab](troubleshooting/)
 
 ## Resources
 
