@@ -11,7 +11,7 @@ In order to carry out the hands-on, at least one member in the team will need:
 ## Preparation
 ### Installing  Jenkins
 
-We're going to install an instance of Jenkins onto DC/OS. The Jenkins package for DCOS is available in the [Mesosphere Universe](https://github.com/mesosphere/universe). 
+We're going to install an instance of Jenkins onto DC/OS. The Jenkins package for DC/OS is available in the [Mesosphere Universe](https://github.com/mesosphere/universe). 
 
 Install Jenkins using the DC/OS CLI:
 ```
@@ -19,6 +19,8 @@ dcos package install jenkins
 ```
 
 Wait a few minutes and the Jenkins instance should come up and be available via the Services tab.
+
+Note that if you want individual Jenkins instances per team member, that's also possible by installing Jenkins either via the `Advanced Installation` option in the DC/OS Dashboard or via using `--options=config.json` argument with above command. See also the [docs](https://dcos.io/docs/1.7/usage/tutorials/jenkins/#installing-jenkins-in-a-development-environment) for further details.
 
 ### Installing the Marathon plugin
 
