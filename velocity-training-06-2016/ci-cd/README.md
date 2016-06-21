@@ -118,7 +118,7 @@ NOTE: don't forget to change the Docker image to point to **your** newly created
 
 Commit and push the Marathon app spec:
 
-    $ git add marathon.json
+    $ git add blog.json
     $ git commit -m "adds Marathon app spec"
     $ git push
 
