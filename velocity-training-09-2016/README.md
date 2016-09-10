@@ -25,12 +25,12 @@ Room: Clinton
 - Bash Terminal
 - Homebrew: <http://brew.sh/>
 - Git: `$ brew install git`
-- Docker: <./docker-mac.md>
+- Docker: <https://github.com/mesosphere/training/blob/master/velocity-training-09-2016/docker-mac.md>
 
 **Windows**
 
 - GitBash: <https://github.com/git-for-windows/git/releases/latest/>
-- Docker: <./docker-windows.md>
+- Docker: <https://github.com/mesosphere/training/blob/master/velocity-training-09-2016/docker-windows.md>
 
 ### SaaS
 

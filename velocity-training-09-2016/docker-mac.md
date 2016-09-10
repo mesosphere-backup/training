@@ -10,7 +10,7 @@ The following options are available:
 
     Docker for Mac has a critical flaw that you can't access the container IPs from the host. The other options are more useful.
 
-- (Recommended) Docker Toolbox with VirtualBox
+- **(Recommended)** Docker Toolbox with VirtualBox
 
     Docker Toolbox works great and is well tested. Just make sure to create a docker-machine large enough for your needs.
 

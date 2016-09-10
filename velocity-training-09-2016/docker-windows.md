@@ -4,7 +4,7 @@ The Windows kernel does not support native containers. So a virtual machine is r
 
 The following options are available:
 
-- (Recommended) "Docker for Windows"
+- **(Recommended)** "Docker for Windows"
 
     Requires Microsoft Hyper-V, which comes with Windows 10 Pro and above (not Home).
 
