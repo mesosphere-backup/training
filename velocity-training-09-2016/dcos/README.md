@@ -11,6 +11,10 @@
     Follow instructions for installing the CLI (in the UI).
     ![Install CLI](dcos-cli-install.png)
 
+    Use the Linux instructions if you're on Mac or Windows but SSHed into a Linux VM.
+
+    TODO: do the Windows instructions work in GitBash?
+
 1. Log in to DC/OS CLI
 
     ```

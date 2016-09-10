@@ -25,14 +25,12 @@ Room: Clinton
 - Bash Terminal
 - Homebrew: <http://brew.sh/>
 - Git: `$ brew install git`
-- VirtualBox: https://www.virtualbox.org/wiki/Downloads
-- Docker Toolbox: <https://www.docker.com/products/docker-toolbox>
+- Docker: <docker-mac.md>
 
 **Windows**
 
 - GitBash: <https://github.com/git-for-windows/git/releases/latest/>
-- VirtualBox: https://www.virtualbox.org/wiki/Downloads
-- Docker Toolbox: <https://www.docker.com/products/docker-toolbox>
+- Docker: <docker-windows.md>
 
 ### SaaS
 
@@ -46,49 +44,18 @@ Room: Clinton
 
 ## Setup
 
-1. Launch Bash Shell
+1. Launch Bash Shell (or SSH into the Linux VM)
 
 1. Clone the Training Repo
 
     ```
     $ mkdir ~/workspace
     $ cd ~/workspace
-    $ git clone https://github.com/mesosphere/training.git
+    $ git clone https://github.com/mesosphere/training
     $ cd training
     ```
 
-    For the rest fo the training, the training directory will be referred to as `$DCOS_HOME`.
-
-1. (Mac & Windows) Configure docker-machine VM
-
-    Create VM
-
-    ```
-    $ docker-machine create \
-      --driver=virtualbox \
-      --engine-storage-driver=overlay \
-      --virtualbox-cpu-count=4 \
-      --virtualbox-disk-size=102400 \
-      --virtualbox-memory=6144 \
-      dockerd
-    ```
-
-
-    Route Docker IPs to VM
-
-    **Mac**
-
-    ```
-    $ sudo route -nv add -net 172.17.0.0/16 192.168.65.50
-    ```
-
-    To undo: `sudo route delete 172.17.0.0/16`
-
-    **Windows**
-
-    ```
-    $ route add 172.17.0.0 mask 255.255.0.0 192.168.65.50 -p
-    ```
+    For the rest of the training, the training directory will be referred to as `$DCOS_HOME`.
 
 ## Agenda
 
