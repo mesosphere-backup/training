@@ -25,12 +25,12 @@ Room: Clinton
 - Bash Terminal
 - Homebrew: <http://brew.sh/>
 - Git: `$ brew install git`
-- Docker: <docker-mac.md>
+- Docker: <./docker-mac.md>
 
 **Windows**
 
 - GitBash: <https://github.com/git-for-windows/git/releases/latest/>
-- Docker: <docker-windows.md>
+- Docker: <./docker-windows.md>
 
 ### SaaS
 
