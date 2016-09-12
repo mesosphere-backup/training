@@ -16,21 +16,20 @@ Training session at [Velocity NY, 2016](http://conferences.oreilly.com/velocity/
 
 **Linux**
 
-- Bash Shell
+- Bash Shell (built in)
 - Git: <https://git-scm.com/download/linux>
 - Docker: <https://docs.docker.com/engine/installation/>
 
 **Mac OS**
 
-- Bash Terminal
-- Homebrew: <http://brew.sh/>
-- Git: `$ brew install git`
-- Docker: <https://github.com/mesosphere/training/blob/master/velocity-training-09-2016/docker-mac.md>
+- Bash Terminal (built in)
+- Git: [Homebrew](http://brew.sh/) + `brew install git`
+- Docker: [Install Options](https://github.com/mesosphere/training/blob/master/velocity-training-09-2016/docker-mac.md)
 
 **Windows**
 
 - GitBash: <https://github.com/git-for-windows/git/releases/latest/>
-- Docker: <https://github.com/mesosphere/training/blob/master/velocity-training-09-2016/docker-windows.md>
+- Docker: [Install Options](https://github.com/mesosphere/training/blob/master/velocity-training-09-2016/docker-windows.md)
 
 ### SaaS
 
@@ -38,7 +37,7 @@ Training session at [Velocity NY, 2016](http://conferences.oreilly.com/velocity/
 - GitHub Account: <https://github.com/>
 - Docker Hub Account: <https://hub.docker.com/>
 
-### Platform
+### Container Platform
 
 - [DC/OS](https://dcos.io/) cluster (provided)
 
