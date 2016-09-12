@@ -1,4 +1,4 @@
-# Docker 101
+# Docker 101 - Containers & Images
 
 ## Agenda
 

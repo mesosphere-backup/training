@@ -60,9 +60,9 @@ Training session at [Velocity NY, 2016](http://conferences.oreilly.com/velocity/
 
 **Day 1**
 
-1. [Docker 101 - Containers & Images](./docker101/)
+1. [Docker 101 - Containers & Images](./docker-101/)
 1. Docker 102 - Best Practices
-1. [DC/OS 101 - ?](./dcos/)
+1. [DC/OS 101 - ?](./dcos-101/)
 
 **Day 2**
 
