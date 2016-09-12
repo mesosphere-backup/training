@@ -1,7 +1,17 @@
 # Docker 101
 
+## Agenda
 
-## Find Docker images
+- [Find Docker Images](#find-docker-images)
+- [Run Docker Job](#run-docker-job)
+- [Run Interactive Docker Container](#run-interactive-docker-container)
+- [Run Docker Service](#run-docker-service)
+- [Introspect Docker Containers](#introspect-docker-containers)
+- [Build Docker Image](#build-docker-image)
+- [Push & Pull Docker Image to DockerHub](#push-pull-docker-image-to-dockerbub)
+- [Clean Up](#clean-up)
+
+## Find Docker Images
 
 ```
 $ docker images
