@@ -77,7 +77,7 @@ $ docker rm -f my-ubuntu
 $ mkdir -p demo/nginx
 $ cd demo/nginx
 
-# create web page
+# create a web page
 $ echo "I just built my first Docker image \o/" >> index.html
 
 # create Dockerfile

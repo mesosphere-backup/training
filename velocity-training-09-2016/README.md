@@ -24,12 +24,12 @@ Training session at [Velocity NY, 2016](http://conferences.oreilly.com/velocity/
 
 - Bash Terminal (built in)
 - Git: [Homebrew](http://brew.sh/) + `brew install git`
-- Docker: [Install Options](https://github.com/mesosphere/training/blob/master/velocity-training-09-2016/docker-mac.md)
+- Docker: [Mac Install Options](https://github.com/mesosphere/training/blob/master/velocity-training-09-2016/docker-install-mac.md)
 
 **Windows**
 
 - GitBash: <https://github.com/git-for-windows/git/releases/latest/>
-- Docker: [Install Options](https://github.com/mesosphere/training/blob/master/velocity-training-09-2016/docker-windows.md)
+- Docker: [Windows Install Options](https://github.com/mesosphere/training/blob/master/velocity-training-09-2016/docker-install-windows.md)
 
 ### SaaS
 
@@ -60,9 +60,9 @@ Training session at [Velocity NY, 2016](http://conferences.oreilly.com/velocity/
 
 **Day 1**
 
-1. [Docker 101 - Containers & Images](./docker-101/)
+1. [Docker 101 - Containers & Images](docker-101.md)
 1. Docker 102 - Best Practices
-1. [DC/OS 101 - ?](./dcos-101/)
+1. [DC/OS 101 - ?](dcos-101.md)
 
 **Day 2**
 
