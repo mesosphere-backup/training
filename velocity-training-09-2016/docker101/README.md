@@ -8,7 +8,7 @@
 - [Run Docker Service](#run-docker-service)
 - [Introspect Docker Containers](#introspect-docker-containers)
 - [Build Docker Image](#build-docker-image)
-- [Push & Pull Docker Image to DockerHub](#push-pull-docker-image-to-dockerbub)
+- [Push & Pull Docker Image to DockerHub](#push--pull-docker-image-to-dockerhub)
 - [Clean Up](#clean-up)
 
 ## Find Docker Images
