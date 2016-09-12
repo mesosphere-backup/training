@@ -74,6 +74,14 @@ Training session at [Velocity NY, 2016](http://conferences.oreilly.com/velocity/
 1. CI Best Practices
 1. Microservice Best Practices
 
+**Daily Break Schedule**
+
+| Time | Location |
+|------|----------|
+| 10:30 - 11:00am | Sutton Complex Foyer (right outside training rooms) |
+| 12:30 - 1:30pm | Rhinelander (same floor as training) |
+| 3:00 - 3:30pm | Sutton Complex Foyer |
+
 
 ## External Resources
 
