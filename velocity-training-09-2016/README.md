@@ -2,7 +2,7 @@
 
 Training session at [Velocity NY, 2016](http://conferences.oreilly.com/velocity/devops-web-performance-ny/public/schedule/detail/52480).
 
-- **Date**: Monday, September 19 - Tuesday September 20
+- **Date**: Monday, September 19 - Tuesday, September 20
 - **Time**: 9:00am – 5:00pm
 - **Venue**: Clinton Room, Hilton NY
 
