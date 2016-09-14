@@ -1,4 +1,4 @@
-## DC/OS 101 -
+# DC/OS 101 - GUI & CLI
 
 ## Intro
 
@@ -9,15 +9,76 @@
 - Release Notes & Downloads: <https://dcos.io/releases/>
 - DC/OS Intro Video: <https://mesosphere.com/resources/dcos-demo/>
 
-## Client Setup
+## GUI
 
-1. Log in to the DC/OS UI
+TODO: move description to slides
+The DC/OS Web GUI is the primary visual control interface for observing and managing your cluster.
 
-    - Visit DC/OS cluster-specific URL in a browser
-    - Log in with an OAuth account (like github)
-    - First user will be made the admin user and need to create accounts for subsequent users
+### GUI - Log In
 
-1. Install the DC/OS CLI
+Visit the IP of a DC/OS master node (or a master node load balancer) in a browser.
+
+![Login Screen](images/dcos-login.png)
+
+Log in with a supported OAuth-compatible account (Google, Github, or Microsoft).
+
+The first user to log in will have a new account created for them automatically.
+
+### GUI - Create Accounts
+
+Once the first account has been created, new users must be invited by a current user.
+
+To invite users, navigate to the `System` page, select the `Organization` tab, select `New User`,
+enter the OAuth-compatible email of the new user, and select `Add User`.
+
+![User List](images/dcos-user-list.png)
+
+The new user will shortly receive an email inviting them to log in to the cluster.
+
+### GUI - Create Service
+
+TODO: move description to slides
+The Services page allows for creating, viewing, and managing services: long running, replicated processes.
+
+Install MinitTwit as a DC/OS Service.
+
+1. Select `Services` in the left navigation panel to access the service list page
+1. Select `Deploy Service` to open the service creation screen
+1. On the `General` tab, enter a service `ID` unique to the cluster (e.g. `minitwit`)
+1. On the `General` tab, enter the amount of `Memory` to allocate to the service (e.g. `256`)
+1. On the `Container Settings` tab, enter the name or url of a `Container Image` (e.g. `karlkfi/minitwit`)
+1. On the `Network` tab, select `Bridge` as the `Network Type`
+1. On the `Network` tab, under `Service Endpoints`, enter the `Container Port` used by the service container (e.g. `80`)
+1. On the `Optional` tab, under `Accepted Resource Roles`, enter `slave_public` to constrain deployment to public nodes
+1. In JSON Mode, under `container.docker.portMappings[0]`, add `"hostPort": 80,` to specify which host port to use
+1. In JSON Mode, add `"requirePorts": true,` so that the service will only be deployed to nodes that have the specified host port available.
+1. Select `Deploy` to deploy the service
+
+### GUI - Locate Service Endpoint
+
+1. Select `Services` in the left navigation panel to access the service list page
+1. Select the name of the deployed service (e.g. `minitwit`) to access the service detail page
+1. Select the `Task ID` of the task with status `Running` to access the task detail page
+1. Select the first link in the `Endpoints` list to access the service itself
+
+### GUI - Destroy Service
+
+1. Select `Services` in the left navigation panel to access the service list page
+1. Hover over the name of the deployed service (e.g. `minitwit`) to show the service actions button
+1. Select the service actions button to show a dropdown of service actions
+1. Select `Destroy` to destroy the service and its tasks
+
+![Service Actions](images/dcos-service-actions.png)
+
+TODO: Health Check
+TODO: Marathon-LB
+
+
+## CLI
+
+The DC/OS CLI is the primary programmatic control interface for observing and managing your cluster.
+
+## CLI - Install
 
     Follow the platform-specific instructions in the UI for installing and configuring the CLI.
     ![Install CLI](dcos-cli-install.png)
@@ -26,7 +87,7 @@
 
     TODO: do the Windows instructions work in GitBash?
 
-1. Log in to the DC/OS CLI
+1. CLI - Log in
 
     ```
     $ dcos auth login
@@ -34,19 +95,44 @@
 
     Follow instructions to retrieve OAuth token via a browser.
 
-## Debugging
+### CLI - Create Service
 
-### SSH Access
+Install MinitTwit as a new Service.
 
-If at any point you need to debug a DC/OS component, job, or service, you may need to SSH into the cluster.
+TODO: instructions
 
-Since not all of the machines in a production cluster are publically internet accessible, you may need to use a bootstrap or master node as a jump box.
+```
+{
+  "id": "/minitwit",
+  "instances": 1,
+  "cpus": 1,
+  "mem": 256,
+  "container": {
+    "docker": {
+      "image": "karlkfi/minitwit",
+      "forcePullImage": false,
+      "privileged": false,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 80,
+          "protocol": "tcp"
+        }
+      ],
+      "network": "BRIDGE"
+    }
+  },
+  "acceptedResourceRoles": [
+    "slave_public"
+  ],
+  "requirePorts": true
+}
+```
 
-- Download SSH private key
-- Generate SSH public key: `ssh-keygen -y -f ~/.ssh/dcoskey > ~/.ssh/dcoskey.pub`
-- Set SSH private key permissions: `chmod 600 ~/.ssh/dcoskey`
-- Add SSH private key to SSH client: `ssh-add ~/.ssh/dcoskey`
-- SSH into remote machine: `ssh -A core@${MASTER_IP_ADDRESS}`
+### CLI - Locate Service Endpoint
 
-TODO: use dcos cli?
-https://dcos.io/docs/1.8/administration/sshcluster/
+TODO: instructions
+
+### CLI - Destroy Service
+
+TODO: instructions
