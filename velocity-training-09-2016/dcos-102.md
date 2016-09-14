@@ -16,7 +16,7 @@ Follow the platform-specific instructions in the UI for installing and configuri
 
 ![Install CLI](images/dcos-cli-install.png)
 
-Use the Linux instructions if you're SSHed into a Linux VM.
+Use the Linux instructions if you're using a Linux VM for your workspace.
 
 TODO: do the Windows instructions work in GitBash?
 
@@ -26,15 +26,15 @@ TODO: do the Windows instructions work in GitBash?
 $ dcos auth login
 ```
 
-Follow instructions to retrieve OAuth token via a browser.
+Follow instructions to generate an OAuth token in a browser and paste it into the CLI.
 
 ## Create Service
 
 Install MinitTwit as a new Service.
 
-TODO: instructions
-
 ```
+# create service definition
+$ cat > minitwit.json << EOF
 {
   "id": "/minitwit",
   "instances": 1,
@@ -60,13 +60,35 @@ TODO: instructions
   ],
   "requirePorts": true
 }
+EOF
+
+# create service
+dcos marathon app add < minitwit.json
+```
+
+## View Service List
+
+```
+$ dcos marathon app list
 ```
 
 ## Locate Service Endpoint
 
-TODO: instructions
+Because this service is mapping to port 80 on the host, we can use the host's IP.
+
+```
+$ dcos marathon app show minitwit | jq -r .tasks[0].host
+```
 
 ## Destroy Service
+
+```
+# stop the service (could be started again later)
+$ dcos marathon app stop minitwit
+
+# remove the service (delete record and logs)
+$ dcos marathon app remove minitwit
+```
 
 TODO: instructions
 

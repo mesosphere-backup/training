@@ -37,9 +37,6 @@ Once the first account has been created, new users must be invited by a current 
 
 ## Create Service
 
-TODO: move description to slides
-The Services page allows for creating, viewing, and managing services: long running, replicated processes.
-
 Install MinitTwit as a DC/OS Service.
 
 1. Select `Services` in the left navigation panel to access the service list page
