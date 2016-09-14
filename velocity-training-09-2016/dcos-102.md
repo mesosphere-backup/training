@@ -7,6 +7,7 @@ The DC/OS CLI is the primary programmatic control interface for observing and ma
 - [Install](#install)
 - [Log In](#log-in)
 - [Create Service](#create-service)
+- [View Service List](#view-service-list)
 - [Locate Service Endpoint](#locate-service-endpoint)
 - [Destroy Service](#destroy-service)
 
@@ -89,8 +90,6 @@ $ dcos marathon app stop minitwit
 # remove the service (delete record and logs)
 $ dcos marathon app remove minitwit
 ```
-
-TODO: instructions
 
 ## Next Up
 
