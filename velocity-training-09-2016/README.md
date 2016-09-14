@@ -10,18 +10,13 @@ Training session at [Velocity NY, 2016](http://conferences.oreilly.com/velocity/
 
 **Day 1**
 
-1. Training Intro (TODO slides)
-1. Docker Basics (TODO slides)
 1. [Setup](setup.md)
-
 1. Docker Basics & Best Practices (TODO slides)
 1. [Docker 101 - Containers & Images](docker-101.md)
 1. [Docker 102 - Example Web App](docker-102.md)
-
 1. DC/OS Basics (TODO slides)
 1. [DC/OS 101 - GUI](dcos-101.md)
 1. [DC/OS 102 - CLI](dcos-102.md)
-
 1. DC/OS Advanced Concepts (TODO slides)
 1. [DC/OS 103 - Health Checks & Debugging](dcos-103.md)
 1. [DC/OS 104 - Networking & Service Discovery](dcos-104.md)
@@ -31,7 +26,6 @@ Training session at [Velocity NY, 2016](http://conferences.oreilly.com/velocity/
 1. Jenkins Intro (TODO slides)
 1. [Jenkins 101 - ?](jenkins-101.md)
 1. [Jenkins 102 - Pipelines](jenkins-102.md)
-
 1. Deployment Strategies (TODO slides)
 1. CI Best Practices (TODO slides)
 1. Microservice Best Practices (TODO slides)
