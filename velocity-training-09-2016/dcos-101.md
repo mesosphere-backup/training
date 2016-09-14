@@ -16,24 +16,26 @@ The DC/OS Web GUI is the primary visual control interface for observing and mana
 
 ### GUI - Log In
 
-Visit the IP of a DC/OS master node (or a master node load balancer) in a browser.
+1. Enter the IP of a DC/OS master node (or a master node load balancer) in a browser
+1. Select a supported OAuth authorizer (Google, Github, or Microsoft)
+1. Follow the authorizer specific instructions to log in
+
+    The first user to log in will have a new account created for them automatically.
+    Subsequent users will need to be invited by the logged in user.
 
 ![Login Screen](images/dcos-login.png)
-
-Log in with a supported OAuth-compatible account (Google, Github, or Microsoft).
-
-The first user to log in will have a new account created for them automatically.
 
 ### GUI - Create Accounts
 
 Once the first account has been created, new users must be invited by a current user.
 
-To invite users, navigate to the `System` page, select the `Organization` tab, select `New User`,
-enter the OAuth-compatible email of the new user, and select `Add User`.
+1. Select `System` in the left navigation panel to access the system overview page
+1. Select the `Organization` tab to access the user list page
+1. Select `New User` to open the user invite screen
+1. In the `Email` field, enter the OAuth-compatible email of the new user
+1. Select `Add User` to create the user account and send an invitation email
 
 ![User List](images/dcos-user-list.png)
-
-The new user will shortly receive an email inviting them to log in to the cluster.
 
 ### GUI - Create Service
 
@@ -47,7 +49,7 @@ Install MinitTwit as a DC/OS Service.
 1. On the `General` tab, enter a service `ID` unique to the cluster (e.g. `minitwit`)
 1. On the `General` tab, enter the amount of `Memory` to allocate to the service (e.g. `256`)
 1. On the `Container Settings` tab, enter the name or url of a `Container Image` (e.g. `karlkfi/minitwit`)
-1. On the `Network` tab, select `Bridge` as the `Network Type`
+1. On the `Network` tab, under `Network Type`, select `Bridge` to enable mapping container ports to host ports
 1. On the `Network` tab, under `Service Endpoints`, enter the `Container Port` used by the service container (e.g. `80`)
 1. On the `Optional` tab, under `Accepted Resource Roles`, enter `slave_public` to constrain deployment to public nodes
 1. In JSON Mode, under `container.docker.portMappings[0]`, add `"hostPort": 80,` to specify which host port to use
