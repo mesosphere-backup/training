@@ -56,12 +56,16 @@ Install MinitTwit as a DC/OS Service.
 1. In JSON Mode, add `"requirePorts": true,` so that the service will only be deployed to nodes that have the specified host port available.
 1. Select `Deploy` to deploy the service
 
+![Deploy New Service](images/dcos-service-create.png)
+
 ### GUI - Locate Service Endpoint
 
 1. Select `Services` in the left navigation panel to access the service list page
 1. Select the name of the deployed service (e.g. `minitwit`) to access the service detail page
 1. Select the `Task ID` of the task with status `Running` to access the task detail page
 1. Select the first link in the `Endpoints` list to access the service itself
+
+![Service Task Details](images/dcos-service-task-details.png)
 
 ### GUI - Destroy Service
 
