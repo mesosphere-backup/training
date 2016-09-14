@@ -65,7 +65,7 @@ ID         MEM  CPUS  TASKS  HEALTH  DEPLOYMENT  CONTAINER  CMD
 /minitwit  256   1     1/1    1/1       ---        DOCKER   None
 ```
 
-![Service Healthy](images/dcos-service-healthy)
+![Service Healthy](images/dcos-service-healthy.png)
 
 ## Readiness Checks
 
@@ -127,7 +127,7 @@ $ cat > minitwit.json << EOF
 EOF
 ```
 
-![Service Deploying](images/dcos-service-deploying)
+![Service Deploying](images/dcos-service-deploying.png)
 
 ## SSH Access
 
