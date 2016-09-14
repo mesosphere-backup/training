@@ -20,8 +20,8 @@ The DC/OS Web GUI is the primary visual control interface for observing and mana
 1. Select a supported OAuth authorizer (Google, Github, or Microsoft)
 1. Follow the authorizer specific instructions to log in
 
-    The first user to log in will have a new account created for them automatically.
-    Subsequent users will need to be invited by the logged in user.
+The first user to log in will have a new account created for them automatically.
+Subsequent users will need to be invited by the logged in user.
 
 ![Login Screen](images/dcos-login.png)
 
