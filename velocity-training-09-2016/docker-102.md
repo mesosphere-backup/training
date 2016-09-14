@@ -6,7 +6,15 @@ MiniTwit is already Dockerized and published on DockerHub, but as an exercise we
 
 ## Agenda
 
-# TODO
+- [Fork Repo](#fork-repo)
+- [Clone Repo](#clone-repo)
+- [Build Docker Image](#build-docker-image)
+- [Run on Docker](#run-on-docker)
+- [Discover Container IP](#discover-container-ip)
+- [View Container Logs](#view-container-logs)
+- [Stop Container](#stop-container)
+- [Run on Docker with MySQL](#run-on-docker-with-mysql)
+- [Cleanup](#cleanup)
 
 ## Fork Repo
 
@@ -33,7 +41,7 @@ $ docker build -t ${DOCKER_USER}/minitwit .
 
 If you don't know your `DOCKER_USER`, see the instructions in [Docker 101: Build Docker Image](dcos-102.md#build-docker-image).
 
-## Run MiniTwit on Docker
+## Run on Docker
 
 ```
 $ docker run -d --name minitwit ${DOCKER_USER}/minitwit
@@ -65,7 +73,7 @@ $ docker stop minitwit
 $ docker rm minitwit
 ```
 
-## Run MiniTwit with MySQL on Docker
+## Run on Docker with MySQL
 
 MiniTwit optionally depends on MySQL for data persistence.
 
