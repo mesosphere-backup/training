@@ -1,24 +1,75 @@
-# DC/OS 101 - Health Checks, SSH & SSL
+# DC/OS 102 - CLI
 
-## Health Checks
+The DC/OS CLI is the primary programmatic control interface for observing and managing your cluster.
 
-TODO: marathon health checks
+## Agenda
 
-## SSH Access
+- [Install](#install)
+- [Log In](#log-in)
+- [Create Service](#create-service)
+- [Locate Service Endpoint](#locate-service-endpoint)
+- [Destroy Service](#destroy-service)
 
-If at any point you need to debug a DC/OS component, job, or service, you may need to SSH into the cluster.
+## Install
 
-Since not all of the machines in a production cluster are publically internet accessible, you may need to use a bootstrap or master node as a jump box.
+Follow the platform-specific instructions in the UI for installing and configuring the CLI.
 
-- Download SSH private key
-- Generate SSH public key: `ssh-keygen -y -f ~/.ssh/dcoskey > ~/.ssh/dcoskey.pub`
-- Set SSH private key permissions: `chmod 600 ~/.ssh/dcoskey`
-- Add SSH private key to SSH client: `ssh-add ~/.ssh/dcoskey`
-- SSH into remote machine: `ssh -A core@${MASTER_IP_ADDRESS}`
+![Install CLI](images/dcos-cli-install.png)
 
-TODO: use dcos cli?
-https://dcos.io/docs/1.8/administration/sshcluster/
+Use the Linux instructions if you're SSHed into a Linux VM.
 
-## SSL Certificates
+TODO: do the Windows instructions work in GitBash?
 
-TODO: SSL certificates?
+## Log in
+
+```
+$ dcos auth login
+```
+
+Follow instructions to retrieve OAuth token via a browser.
+
+## Create Service
+
+Install MinitTwit as a new Service.
+
+TODO: instructions
+
+```
+{
+  "id": "/minitwit",
+  "instances": 1,
+  "cpus": 1,
+  "mem": 256,
+  "container": {
+    "docker": {
+      "image": "karlkfi/minitwit",
+      "forcePullImage": false,
+      "privileged": false,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 80,
+          "protocol": "tcp"
+        }
+      ],
+      "network": "BRIDGE"
+    }
+  },
+  "acceptedResourceRoles": [
+    "slave_public"
+  ],
+  "requirePorts": true
+}
+```
+
+## Locate Service Endpoint
+
+TODO: instructions
+
+## Destroy Service
+
+TODO: instructions
+
+## Next Up
+
+[DC/OS 103 - Health Checks & SSH](dcos-103.md)

@@ -1,20 +1,18 @@
-# DC/OS 101 - GUI & CLI
+# DC/OS 101 - GUI
 
-## Intro
-
-- Website: <https://dcos.io/>
-- Source: <https://github.com/dcos/dcos>
-- Docs: <https://dcos.io/docs/1.8/>
-- Install Instructions: <https://dcos.io/install/>
-- Release Notes & Downloads: <https://dcos.io/releases/>
-- DC/OS Intro Video: <https://mesosphere.com/resources/dcos-demo/>
-
-## GUI
-
-TODO: move description to slides
 The DC/OS Web GUI is the primary visual control interface for observing and managing your cluster.
 
-### GUI - Log In
+## Agenda
+
+- [Log In](#log-in)
+- [Create Account](#create-account)
+- [Create Service](#create-service)
+- [Locate Service Endpoint](#locate-service-endpoint)
+- [Destroy Service](#destroy-service)
+
+![Dashboard](images/dcos-dashboard.png)
+
+## Log In
 
 1. Enter the IP of a DC/OS master node (or a master node load balancer) in a browser
 1. Select a supported OAuth authorizer (Google, Github, or Microsoft)
@@ -25,7 +23,7 @@ Subsequent users will need to be invited by the logged in user.
 
 ![Login Screen](images/dcos-login.png)
 
-### GUI - Create Accounts
+## Create Account
 
 Once the first account has been created, new users must be invited by a current user.
 
@@ -37,7 +35,7 @@ Once the first account has been created, new users must be invited by a current 
 
 ![User List](images/dcos-user-list.png)
 
-### GUI - Create Service
+## Create Service
 
 TODO: move description to slides
 The Services page allows for creating, viewing, and managing services: long running, replicated processes.
@@ -58,7 +56,7 @@ Install MinitTwit as a DC/OS Service.
 
 ![Deploy New Service](images/dcos-service-create.png)
 
-### GUI - Locate Service Endpoint
+## Locate Service Endpoint
 
 1. Select `Services` in the left navigation panel to access the service list page
 1. Select the name of the deployed service (e.g. `minitwit`) to access the service detail page
@@ -67,7 +65,7 @@ Install MinitTwit as a DC/OS Service.
 
 ![Service Task Details](images/dcos-service-task-details.png)
 
-### GUI - Destroy Service
+## Destroy Service
 
 1. Select `Services` in the left navigation panel to access the service list page
 1. Hover over the name of the deployed service (e.g. `minitwit`) to show the service actions button
@@ -76,69 +74,6 @@ Install MinitTwit as a DC/OS Service.
 
 ![Service Actions](images/dcos-service-actions.png)
 
-TODO: Health Check
-TODO: Marathon-LB
+## Next Up
 
-
-## CLI
-
-The DC/OS CLI is the primary programmatic control interface for observing and managing your cluster.
-
-## CLI - Install
-
-    Follow the platform-specific instructions in the UI for installing and configuring the CLI.
-    ![Install CLI](dcos-cli-install.png)
-
-    Use the Linux instructions if you're SSHed into a Linux VM.
-
-    TODO: do the Windows instructions work in GitBash?
-
-1. CLI - Log in
-
-    ```
-    $ dcos auth login
-    ```
-
-    Follow instructions to retrieve OAuth token via a browser.
-
-### CLI - Create Service
-
-Install MinitTwit as a new Service.
-
-TODO: instructions
-
-```
-{
-  "id": "/minitwit",
-  "instances": 1,
-  "cpus": 1,
-  "mem": 256,
-  "container": {
-    "docker": {
-      "image": "karlkfi/minitwit",
-      "forcePullImage": false,
-      "privileged": false,
-      "portMappings": [
-        {
-          "hostPort": 80,
-          "containerPort": 80,
-          "protocol": "tcp"
-        }
-      ],
-      "network": "BRIDGE"
-    }
-  },
-  "acceptedResourceRoles": [
-    "slave_public"
-  ],
-  "requirePorts": true
-}
-```
-
-### CLI - Locate Service Endpoint
-
-TODO: instructions
-
-### CLI - Destroy Service
-
-TODO: instructions
+[DC/OS 102 - CLI](dcos-102.md)

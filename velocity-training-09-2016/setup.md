@@ -38,10 +38,14 @@
 1. Clone the Training Repo
 
     ```
-    $ mkdir ~/workspace
+    $ mkdir -p ~/workspace
     $ cd ~/workspace
     $ git clone https://github.com/mesosphere/training
     $ cd training
     ```
 
     For the rest of the training, the training directory will be referred to as `$DCOS_HOME`.
+
+## Back to Index
+
+[Velocity Training](README.md)

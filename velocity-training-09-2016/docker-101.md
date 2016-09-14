@@ -47,7 +47,7 @@ $ NGINX_IP=$(docker inspect --format '{{ .NetworkSettings.IPAddress }}' my-nginx
 # visit container port
 $ curl http://${NGINX_IP} #TODO: port? 8081? 8080? 80?
 
-# kill and remove container
+# stop and remove container
 $ docker rm -f my-nginx
 ```
 
@@ -92,26 +92,26 @@ EOF
 $ docker login
 
 # get username
-$ DOCKER_USERNAME=$(docker info | grep Username | cut -d' ' -f2)
+$ DOCKER_USER=$(docker info | grep Username | cut -d' ' -f2)
 
 # build docker image
-$ docker build -t ${DOCKER_USERNAME}/nginx-hello-world .
+$ docker build -t ${DOCKER_USER}/nginx-hello-world .
 ```
 
 ## Push & Pull Docker Image to DockerHub
 
 ```
 # tag existing image (skip if tagged at build time)
-$ docker tag ${CONTAINER_ID} ${DOCKER_USERNAME}/nginx-hello-world
+$ docker tag ${CONTAINER_ID} ${DOCKER_USER}/nginx-hello-world
 
 # publish image
-$ docker push ${DOCKER_USERNAME}/nginx-hello-world
+$ docker push ${DOCKER_USER}/nginx-hello-world
 
 # download published image
-$ docker pull ${DOCKER_USERNAME}/nginx-hello-world
+$ docker pull ${DOCKER_USER}/nginx-hello-world
 ```
 
-Visit your container page on DockerHub: `https://hub.docker.com/u/${DOCKER_USERNAME}/nginx-hello-world/`
+Visit your container page on DockerHub: `https://hub.docker.com/u/${DOCKER_USER}/nginx-hello-world/`
 
 ## Clean Up
 
@@ -125,3 +125,7 @@ $ docker ps -q -a | xargs docker rm -f
 # delete all unused images
 $ docker images -f "dangling=true" -q | xargs docker rmi
 ```
+
+## Next Up
+
+[Docker 102 - Example Web App](dcos-102.md)
