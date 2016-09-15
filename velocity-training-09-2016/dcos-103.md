@@ -6,7 +6,7 @@
 - [Readiness Checks](#readiness-checks)
 - [SSH Access](#ssh-access)
 - [Component Logs](#component-logs)
-- [Identify Marathon Leader](#identify-marathon-leader)
+- [Programmatic Interaction](#programmatic-interaction)
 
 ## Health Checks
 
@@ -194,21 +194,24 @@ dcos-spartan-watchdog.timer    loaded active waiting   DNS Dispatcher Watchdog T
 
 Note that master and agent nodes have different components.
 
-## Identify Marathon Leader
+## Programmatic Interaction
 
-If your cluster has multiple master nodes (which it should, in production), current logs will only be on the leading master.
-Since each HA component selects its own leader, marathon and mesos leaders may not be on the same master node.
+Mesosphere Enterprise DC/OS includes user groups, fine-grained authorization, and service accounts, along with other security features. Service accounts in particular allow for the creation of long-lived authentication tokens, which are useful for programmatic interaction.
 
-Finding the leading Marathon is a bit tricky, but it is available in the Mesos `state.json`.
+For more on service authentication, see <https://docs.mesosphere.com/1.8/administration/id-and-access-mgt/service-auth/>
 
-However, with authorization enabled, accessing the API programmatically is a bit more complicated.
+In the future, service accounts and auth tokens will likely be open sourced, but for now, to programmatically avoid the OAuth flow, it is possible to SSH into the master nodes and curl the component APIs directly.
 
-One available method is to SSH into the master node, bypass the admin router (that enforces authorization) and curl Mesos directly.
-
-The result can then be processed with jq to pull out the hostname of the registered Marathon framework.
+For example, to access the Marathon API:
 
 ```
-dcos node ssh --leader --user=root --option IdentityFile=genconf/ssh_key $'curl "http://\$(hostname):5050/state.json"' 2>/dev/null | jq -r '.frameworks[] | select(.name == "marathon") | .hostname'
+$ ssh -i ${SSH_KEY_PATH} ${SSH_USER}@${DCOS_ADDRESS} curl -s -f http://marathon.mesos:8080/
+```
+
+Or access the Mesos API:
+
+```
+$ ssh -i ${SSH_KEY_PATH} ${SSH_USER}@${DCOS_ADDRESS} curl -s -f http://leader.mesos:5050/
 ```
 
 ## Next Up
