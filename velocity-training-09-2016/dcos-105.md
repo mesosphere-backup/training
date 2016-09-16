@@ -136,7 +136,7 @@ $ dcos marathon app show marathon-lb | jq -r .tasks[].host
 172.17.0.6
 ```
 
-Try accessing MiniTwit through Marahton-LB!
+To see this in action, modify the MiniTwit service definition from [DC/OS 103](dcos-103.md#readiness-checks) to use Marahton-LB and expose port 80 as external. Then use the public slave IP, address, or ELB to reach MiniTwit from your local machine.
 
 ### Virtual Hosts
 
@@ -230,7 +230,58 @@ For more detail about VIPs, see <https://dcos.io/docs/1.8/usage/service-discover
 
 ## Overlay Network
 
-TODO: Overlay Networks
+An DC/OS overlay network is a virtual network that provides ephemeral IPv4 IPs to all containers (Mesos tasks) that opt-in.
+
+By default, these overlay network IPs can be accessed from anywhere in the cluster, as if each container was on the same physical switch.
+
+In addition, network isolation may also be configured such that only services on the same network and in the same virtual group may communicate with each other via their overlay network IPs.
+
+Unlike virtual addresses, overlay networks...
+
+- Use auto-assigned IPs, not IPs specified by the service owner
+- Assign IPs to Mesos tasks, not to Marathon services (which may be composed of multiple Mesos tasks) TODO: verify
+
+By default, DC/OS comes with one overlay network spanning all nodes named `dcos`, but additional overlay networks may be added. TODO: how?
+
+To configure a DC/OS service to be on an overlay network, specify one under `ipAddress`:
+
+```
+"ipAddress":{
+  "networkName": "dcos"
+}
+```
+
+To configure network isolation, add a `group`:
+
+```
+"ipAddress":{
+  "networkName": "dcos",
+  "groups": [ "secret-club" ]
+}
+```
+
+Since the overlay network IP is wholly owned by the task it's assigned to, no ports explicitly need to be allocated to the task.
+However, to improve service discovery, it may be useful to define what ports and protocols the service will be using and give them names.
+
+```
+"ipAddress":{
+  "networkName": "dcos",
+  "discovery": {
+    "ports": [
+      {
+        "name": "http-api",
+        "number": 80,
+        "protocol": "tcp"
+      }
+    ]
+  }
+}
+```
+
+For more detail about Overlay Networks, see <https://dcos.io/docs/1.8/administration/overlay-networks/>
+
+> A separate ports/portMappings configuration is then disallowed.
+TODO: does this mean I can't use Mesos agent ports or VIPs when using an overlay network?
 
 ## Back to Index
 
