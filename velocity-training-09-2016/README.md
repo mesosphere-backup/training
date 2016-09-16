@@ -8,28 +8,36 @@ Training session at [Velocity NY, 2016](http://conferences.oreilly.com/velocity/
 
 ## Agenda
 
-**Day 1**
-
 1. [Setup](setup.md)
+
+**Docker**
+
 1. Docker Basics & Best Practices (TODO slides)
 1. [Docker 101 - Containers & Images](docker-101.md)
 1. [Docker 102 - Example Web App](docker-102.md)
+
+**DC/OS**
+
 1. DC/OS Basics (TODO slides)
 1. [DC/OS 101 - GUI](dcos-101.md)
 1. [DC/OS 102 - CLI](dcos-102.md)
 1. DC/OS Advanced Concepts (TODO slides)
 1. [DC/OS 103 - Health Checks & Debugging](dcos-103.md)
-1. [DC/OS 104 - Networking & Service Discovery](dcos-104.md)
+1. [DC/OS 104 - Packages & Mesosphere Universe](dcos-104.md)
+1. [DC/OS 105 - Networking & Service Discovery](dcos-105.md)
 
-**Day 2**
+**Jenkins**
 
 1. Jenkins Intro (TODO slides)
 1. [Jenkins 101 - ?](jenkins-101.md)
 1. [Jenkins 102 - Pipelines](jenkins-102.md)
 1. Deployment Strategies (TODO slides)
 1. CI Best Practices (TODO slides)
+
+**Extra**
+
 1. Microservice Best Practices (TODO slides)
-1. TODO: More? Extras?
+1. TODO: More?
 
 **Daily Break Schedule**
 
