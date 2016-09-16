@@ -32,8 +32,11 @@ For example, a DC/OS service with the name `minitwit` will be reachable on `mini
 The full list of DNS records can be queried from the Mesos-DNS API:
 
 ```
-# TODO: update for AWS
-dcos node ssh --leader --user=root --option IdentityFile=genconf/ssh_key "curl -s -f http://master.mesos:8123/v1/enumerate"
+# SSH into a node (e.g. master)
+dcos node ssh --leader --user=root --option IdentityFile=genconf/ssh_key
+
+# curl the enumerate endpoint
+curl -s -f http://master.mesos:8123/v1/enumerate
 ```
 
 ### Mesos-DNS Resources
