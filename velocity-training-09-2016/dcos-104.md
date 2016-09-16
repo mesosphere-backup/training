@@ -1,13 +1,12 @@
-# DC/OS 104 - Networking & Service Discovery
+# DC/OS 104 - Packages & Mesosphere Universe
 
-TODO: DC/OS 104 - Service Discovery
+## Agenda
 
-TODO: Marathon-LB
 
-TODO: Minuteman VIPs
+# Install MySQL
 
-TODO: Overlay Networks
+TODO: install mysql & minitwit on dcos
 
-## Back to Index
+## Next Up
 
-[Velocity Training](README.md)
+[DC/OS 105 - Networking & Service Discovery](dcos-105.md)

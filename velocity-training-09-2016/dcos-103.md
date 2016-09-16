@@ -216,4 +216,4 @@ $ ssh -i ${SSH_KEY_PATH} ${SSH_USER}@${DCOS_ADDRESS} curl -s -f http://leader.me
 
 ## Next Up
 
-[DC/OS 104 - Service Discovery](dcos-104.md)
+[DC/OS 104 - Packages & Mesosphere Universe](dcos-104.md)
