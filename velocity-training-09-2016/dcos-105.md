@@ -5,7 +5,6 @@ For general information on service discovery, see <https://dcos.io/docs/1.8/usag
 ## Agenda
 
 - [Domain Name Service (DNS)](#domain-name-service-dns)
-- [Reverse Proxy](#reverse-proxy)
 - [Virtual Address](#virtual-address)
 - [Overlay Network](#overlay-network)
 
@@ -45,106 +44,13 @@ curl -s -f http://master.mesos:8123/v1/enumerate
 - Mesos-DNS Website: http://mesosphere.github.io/mesos-dns/
 - Mesos-DNS Source: https://github.com/mesosphere/mesos-dns
 
-## Reverse Proxy
-
-Marathon-LB is the standard reverse proxy used with DC/OS to expose public services.
-It works by watching Marathon state changes and updating HAProxy to match.
-It runs on a DC/OS **public agent node** and is itself scheduled by Marathon.
-
-Marathon-LB can be installed from the Mesosphere Universe:
-
-```
-dcos package install marathon-lb
-```
-
-Since Marathon-LB can handle proxying a large number of services, it is allocated most of the open ports on the public agent node, including 80 (HTTP) and 443 (HTTPS). So it may fail to deploy if your public nodes already have other ports allocated.
-
-On some older kernels (like CentOS), Marathon-LB may need to be configured before install to remove unsupported `sysctl-params` or it will fail to deploy.
-
-To configure a service to use Marathon-LB:
-
-1. Configure the service to run on a private agent node with a random host port:
-
-    These settings are default behavior, but were set with explicit values in the MiniTwit example. Change or just remove them.
-
-    Set the host port to zero:
-
-    ```
-    "container": {
-      ...
-      "docker": {
-        ...
-        "portMappings": [
-          {
-            ...
-            "hostPort": 0,
-          }
-        ]
-      }
-    }
-    ```
-
-    Disable host port requirement:
-
-    ```
-    "requirePorts": false
-    ```
-
-    Remove the resource role requirement:
-
-    ```
-    "acceptedResourceRoles": []
-    ```
-
-1. Add a `servicePort` in the port mapping of a specific port:
-
-   ```
-   "container": {
-     ...
-     "docker": {
-       ...
-       "portMappings": [
-         {
-           ...
-           "servicePort": 80
-         }
-       ]
-     }
-   }
-   ```
-
-   The service port should be set to the port to expose on the public agent node.
-
-1. Label the service as external:
-
-    ```
-    "labels":{
-      "HAPROXY_GROUP": "external"
-    }
-    ```
-
-Once both the service and Marathon-LB are created or updated, the service should be accessible on the public agent node via the specified service port.
-
-On AWS, the public agent nodes are given their own Elastic Load Balancer (ELB).
-If there is only one public agent node, the ELB can be used to access Marathon-LB.
-
-Otherwise, to find the Marathon-LB endpoint according to the cluster, use the dcos CLI (or web GUI or Marathon API):
-
-```
-# TODO: update for AWS
-$ dcos marathon app show marathon-lb | jq -r .tasks[].host
-172.17.0.6
-```
-
-To see this in action, modify the MiniTwit service definition from [DC/OS 103](dcos-103.md#readiness-checks) to use Marahton-LB and expose port 80 as external. Then use the public slave IP, address, or ELB to reach MiniTwit from your local machine.
-
 ### Virtual Hosts
 
 A virtual host is a fully qualified domain name (FQDN) assigned to a specific Marahton-LB port.
 This allows you to serve from a non-standard port (e.g. 10000), but access with a standard port (e.g. 80).
 This means you can serve many services from the same public agent node, each with their own custom domain or sub-domain!
 
-Setting up a virtual host requires registering a domain name. So we'll skip it for this workshop.
+Setting up a virtual host requires registering a domain name. So we'll skip it for this lab.
 
 For more detail, see <https://dcos.io/docs/1.8/usage/service-discovery/marathon-lb/usage/#virtual-hosts>
 
@@ -230,7 +136,7 @@ For more detail about VIPs, see <https://dcos.io/docs/1.8/usage/service-discover
 
 ## Overlay Network
 
-An DC/OS overlay network is a virtual network that provides ephemeral IPv4 IPs to all containers (Mesos tasks) that opt-in.
+An DC/OS overlay network is a virtual network that provides ephemeral IPv4 IPs to all containers (Mesos tasks) that opt-in. This is also known as IP-per-container.
 
 By default, these overlay network IPs can be accessed from anywhere in the cluster, as if each container was on the same physical switch.
 
@@ -260,8 +166,7 @@ To configure network isolation, add a `group`:
 }
 ```
 
-Since the overlay network IP is wholly owned by the task it's assigned to, no ports explicitly need to be allocated to the task.
-However, to improve service discovery, it may be useful to define what ports and protocols the service will be using and give them names.
+Since the overlay network IP is only used by the task it's assigned to, no ports explicitly need to be allocated to the task. But if not using docker container port mapping, ports may be defined on the overlay IP address instead.
 
 ```
 "ipAddress":{
@@ -278,7 +183,15 @@ However, to improve service discovery, it may be useful to define what ports and
 }
 ```
 
-For more detail about Overlay Networks, see <https://dcos.io/docs/1.8/administration/overlay-networks/>
+**Caveats:**
+
+- Because DC/OS overlay networks are new, they don't yet support mapping directly to a VIP. If you need a VIP too, you'll have to define a VIP using container port mapping instead (`container.docker.portMappings`).
+- Overlay networking does not work concurrently with Marathon-LB. If you need both IP-per-container and a remote proxy, use a VIP and a static HAProxy or nginx that proxies to the VIP.
+- If using docker container port mapping, ports cannot also be specified on the overlay IP address.
+- If ports are specified on the overlay IP address, Marathon needs to have access to the specified overlay network in order to perform health and readiness checks.
+
+
+For more detail about overlay networks, see <https://dcos.io/docs/1.8/administration/overlay-networks/>
 
 > A separate ports/portMappings configuration is then disallowed.
 TODO: does this mean I can't use Mesos agent ports or VIPs when using an overlay network?

@@ -40,7 +40,7 @@ $ cat > minitwit.json << EOF
   "id": "/minitwit",
   "instances": 1,
   "cpus": 1,
-  "mem": 256,
+  "mem": 512,
   "container": {
     "docker": {
       "image": "karlkfi/minitwit",

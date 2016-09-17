@@ -22,7 +22,7 @@ $ cat > minitwit.json << EOF
   "id": "/minitwit",
   "instances": 1,
   "cpus": 1,
-  "mem": 256,
+  "mem": 512,
   "container": {
     "docker": {
       "image": "karlkfi/minitwit",
@@ -81,7 +81,7 @@ $ cat > minitwit.json << EOF
   "id": "/minitwit",
   "instances": 1,
   "cpus": 1,
-  "mem": 256,
+  "mem": 512,
   "container": {
     "docker": {
       "image": "karlkfi/minitwit",
@@ -216,4 +216,4 @@ $ ssh -i ${SSH_KEY_PATH} ${SSH_USER}@${DCOS_ADDRESS} curl -s -f http://leader.me
 
 ## Next Up
 
-[DC/OS 104 - Packages & Mesosphere Universe](dcos-104.md)
+[DC/OS 104 - Packages & Scaling](dcos-104.md)

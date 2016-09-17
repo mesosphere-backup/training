@@ -23,7 +23,7 @@ Training session at [Velocity NY, 2016](http://conferences.oreilly.com/velocity/
 1. [DC/OS 102 - CLI](dcos-102.md)
 1. DC/OS Advanced Concepts (TODO slides)
 1. [DC/OS 103 - Health Checks & Debugging](dcos-103.md)
-1. [DC/OS 104 - Packages & Mesosphere Universe](dcos-104.md)
+1. [DC/OS 104 - Packages & Scaling](dcos-104.md)
 1. [DC/OS 105 - Networking & Service Discovery](dcos-105.md)
 
 **Jenkins**
