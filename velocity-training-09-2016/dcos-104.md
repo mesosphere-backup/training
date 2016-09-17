@@ -13,8 +13,6 @@
 
 ## Install MySQL
 
-![MySQL Universe Package](images/dcos-install-mysql.png)
-
 The MySQL universe package is a fairly simple package. It's just MySQL running in a docker container with a package that defines domain-specific configuration, using a template to generate a DC/OS service definition.
 
 To install it from the GUI:
@@ -30,10 +28,12 @@ To install it from the GUI:
 1. Select `Review and Install` to open the package review page
 1. Select `Install` to install the package and create a DC/OS service
 
+![MySQL Universe Package](images/dcos-install-mysql.png)
+
 Packages may *alternatively* be installed with the DC/OS CLI, using a JSON configuration file.
 
 ```
-cat > pkg-mysql.json << EOF
+$ cat > pkg-mysql.json << EOF
 {
   "service": {
     "name": "mysql"
@@ -49,7 +49,7 @@ cat > pkg-mysql.json << EOF
 }
 EOF
 
-dcos package install mysql --options=pkg-mysql.json
+$ dcos package install mysql --options=pkg-mysql.json
 ```
 
 Once installed, running, and ready, MySQL should be reachable inside the cluster via DNS at `mysql.marathon.mesos:3306`.
@@ -205,6 +205,12 @@ Scaling a service is simple in DC/OS:
 1. Select `Scale Service` to start the deployment of new service instances
 
 ![Three Service Instances](images/dcos-service-detail-scaled.png)
+
+Service may *alternatively* be scaled with the DC/OS CLI:
+
+```
+$ dcos marathon app update minitwit instances=3
+```
 
 Now, when accessing the service via the public slave, Marathon-LB will round robin between the healthy service instances!
 
