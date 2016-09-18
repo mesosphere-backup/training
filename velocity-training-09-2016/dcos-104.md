@@ -179,15 +179,25 @@ Once both the service and Marathon-LB are created/updated, running, and healthy,
 On AWS, the public agent nodes are given their own Elastic Load Balancer (ELB).
 If there is only one public agent node, the ELB can be used to access Marathon-LB.
 
-Otherwise, to find the Marathon-LB endpoint according to the cluster, use the dcos CLI (or web GUI or Marathon API):
+To find the public IP address of the public agent node:
 
 ```
-# TODO: update for AWS
+# Lookup the internal IP of the public agent node hosting marathon-lb
 $ dcos marathon app show marathon-lb | jq -r .tasks[].host
-172.17.0.6
+10.0.6.199
+
+# SSH into the leading master
+$ dcos node ssh --master-proxy --leader
+
+# SSH into the public agent node
+$ ssh 10.0.6.199
+
+# Lookup the public IP of the public agent node
+$ curl -sf http://ipecho.net/plain
+52.32.72.231
 ```
 
-To see this in action, modify the MiniTwit service definition from [DC/OS 103](dcos-103.md#readiness-checks) to use Marahton-LB and expose port 80 as external. Then use the public slave IP, address, or ELB to reach MiniTwit from your local machine.
+To see this in action, modify the MiniTwit service definition from [DC/OS 103](dcos-103.md#readiness-checks) to use Marahton-LB and expose port 80 as external. Then use the public IP or ELB to reach MiniTwit from your local machine.
 
 ## Service Scaling
 
