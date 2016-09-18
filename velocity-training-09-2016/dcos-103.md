@@ -137,11 +137,15 @@ In production, not all machines in a cluster should be internet accessible. So y
 
 In the provided AWS clusters, the master nodes are internet accessible. So you can SSH into them and/or use them to proxy into agent nodes.
 
-- Download SSH private key
-- Generate SSH public key: `ssh-keygen -y -f ~/.ssh/dcoskey > ~/.ssh/dcoskey.pub`
+- Download SSH private key to `~/.ssh/dcoskey`
 - Set SSH private key permissions: `chmod 600 ~/.ssh/dcoskey`
 - Add SSH private key to SSH client: `ssh-add ~/.ssh/dcoskey`
-- SSH into remote machine: `ssh -A core@${MASTER_IP_ADDRESS}`
+- SSH into remote machine: `ssh -A core@${MASTER_ADDRESS}`
+
+To SSH into an agent:
+
+- Follow above step to SSH into a master node
+- SSH into an agent: `ssh core@${AGENT_IP}`
 
 TODO: show how to ssh with the dcos cli, including proxying through the master to a private agent
 

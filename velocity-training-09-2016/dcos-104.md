@@ -15,7 +15,7 @@
 
 The MySQL universe package is a fairly simple package. It's just MySQL running in a docker container with a package that defines domain-specific configuration, using a template to generate a DC/OS service definition.
 
-To install it from the GUI:
+To install MySQL from the GUI:
 
 1. Select `Universe` in the left navigation panel to access the package list page
 1. Type `MySQL` into the search box to filter the packages.
