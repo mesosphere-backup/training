@@ -1,7 +1,6 @@
-# DCOS training
+# DC/OS training
 
-- [Velocity SC, 06/2016](velocity-training-06-2016/)
-- [DCOS bootcamp, 04/2016](dcos-bootcamp-04-2016/)
-- [Velocity NYC, 10/2015](velocity-training-10-2015/)
-
-
+- [2016/09 - Velocity NYC](velocity-training-09-2016/)
+- [2016/06 - Velocity SC](velocity-training-06-2016/)
+- [2016/04 - DC/OS Bootcamp SF](dcos-bootcamp-04-2016/)
+- [2015/10 - Velocity NYC](velocity-training-10-2015/)
