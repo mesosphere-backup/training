@@ -24,6 +24,9 @@ Velocity File Server: <http://10.10.32.101/>
 ## SaaS
 
 - DC/OS Community Slack Account: <http://chat.dcos.io/> `#velocity-ny-2016` channel
+  - @karl.mesophere
+  - @brenden.mesosphere
+  - @sq-drew.mesosphere
 - GitHub Account: <https://github.com/>
 - Docker Hub Account: <https://hub.docker.com/>
 
