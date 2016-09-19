@@ -6,39 +6,6 @@ Training session at [Velocity NY, 2016](http://conferences.oreilly.com/velocity/
 - **Time**: 9:00am – 5:00pm
 - **Venue**: Clinton Room, Hilton NY
 
-## Agenda
-
-1. [Setup](setup.md)
-
-**Docker**
-
-1. Docker Basics & Best Practices (TODO slides)
-1. [Docker 101 - Containers & Images](docker-101.md)
-1. [Docker 102 - Example Web App](docker-102.md)
-
-**DC/OS**
-
-1. DC/OS Basics (TODO slides)
-1. [DC/OS 101 - GUI](dcos-101.md)
-1. [DC/OS 102 - CLI](dcos-102.md)
-1. DC/OS Advanced Concepts (TODO slides)
-1. [DC/OS 103 - Health Checks & Debugging](dcos-103.md)
-1. [DC/OS 104 - Packages & Scaling](dcos-104.md)
-1. [DC/OS 105 - Networking & Service Discovery](dcos-105.md)
-
-**Jenkins**
-
-1. Jenkins Intro (TODO slides)
-1. [Jenkins 101 - ?](jenkins-101.md)
-1. [Jenkins 102 - Pipelines](jenkins-102.md)
-1. Deployment Strategies (TODO slides)
-1. CI Best Practices (TODO slides)
-
-**Extra**
-
-1. Microservice Best Practices (TODO slides)
-1. TODO: More?
-
 **Daily Break Schedule**
 
 | Time | Location |
@@ -46,6 +13,48 @@ Training session at [Velocity NY, 2016](http://conferences.oreilly.com/velocity/
 | 10:30 - 11:00am | Sutton Complex Foyer (right outside training rooms) |
 | 12:30 - 1:30pm | Rhinelander (same floor as training) |
 | 3:00 - 3:30pm | Sutton Complex Foyer |
+
+**WiFi**
+
+- Name (SSID): `Velocity 2016`
+- Password: `velocity` (all lower case)
+
+## Agenda
+
+1. CI/CD Intro (slides)
+1. [Workspace Setup](setup.md)
+
+**Docker**
+
+1. Docker Intro (slides)
+1. [Docker 101 - Containers & Images](docker-101.md)
+1. [Docker 102 - Example Web App](docker-102.md)
+
+**DC/OS**
+
+1. DC/OS Intro (slides)
+1. [DC/OS 101 - GUI](dcos-101.md)
+1. [DC/OS 102 - CLI](dcos-102.md)
+1. DC/OS, the Container Platform (slides)
+1. [DC/OS 103 - Health Checks & Debugging](dcos-103.md)
+1. [DC/OS 104 - Packages & Scaling](dcos-104.md)
+1. [DC/OS 105 - Networking & Service Discovery](dcos-105.md)
+
+**Jenkins**
+
+1. Jenkins Intro (slides)
+1. [Jenkins 101 - Quickstart](jenkins-101.md)
+1. [Jenkins 102 - Pipelines](jenkins-102.md)
+1. [Jenkins 103 - Persistent Storage](jenkins-103.md)
+1. [Jenkins 104 - Webhooks](jenkins-104.md)
+1. [Jenkins 105 - Security](jenkins-105.md)
+
+**Extra**
+
+1. Docker Best Practices (slides)
+1. Deployment Strategies (slides)
+1. CI Best Practices (slides)
+1. Microservice Best Practices (slides)
 
 ## Resources
 
@@ -57,6 +66,7 @@ Training session at [Velocity NY, 2016](http://conferences.oreilly.com/velocity/
 - Installation: <https://docs.docker.com/engine/installation/>
 - Release Notes: <https://docs.docker.com/release-notes/>
 - Valuable Docker Links: <http://www.nkode.io/2014/08/24/valuable-docker-links.html>
+- Docker Cheat Sheet: <https://coderwall.com/p/2es5jw/docker-cheat-sheet-with-examples>
 
 **Jenkins**
 

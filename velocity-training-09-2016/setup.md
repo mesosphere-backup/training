@@ -1,5 +1,7 @@
 # Setup
 
+Velocity File Server: <http://10.10.32.101/>
+
 ## Software
 
 **Linux**
@@ -28,8 +30,6 @@
 ## Container Platform
 
 - [DC/OS](https://dcos.io/) cluster (provided)
-
-    TODO: link to google doc with IPS & SSH keys
 
 ## Training Repo
 
