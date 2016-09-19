@@ -1,10 +1,9 @@
 # Jenkins 101 - Quickstart
 
 ## Agenda
-TODO: Agenda
 
-- Install Jenkins Package
-- Create Jenkins Project
+- [Install Jenkins Package](#install-jenkins-package)
+- [Create Jenkins Project](#create-jenkins-project)
 
 ## Install Jenkins Package
 

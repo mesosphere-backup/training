@@ -142,12 +142,9 @@ By default, these overlay network IPs can be accessed from anywhere in the clust
 
 In addition, network isolation may also be configured such that only services on the same network and in the same virtual group may communicate with each other via their overlay network IPs.
 
-Unlike virtual addresses, overlay networks...
+Unlike virtual addresses, overlay networks use auto-assigned IPs, not IPs specified by the service owner. However, this means they also won't ever overlap with other services.
 
-- Use auto-assigned IPs, not IPs specified by the service owner
-- Assign IPs to Mesos tasks, not to Marathon services (which may be composed of multiple Mesos tasks) TODO: verify
-
-By default, DC/OS comes with one overlay network spanning all nodes named `dcos`, but additional overlay networks may be added. TODO: how?
+By default, DC/OS comes with one overlay network spanning all nodes named `dcos`, but additional overlay networks may be added by modifying the `config.yaml` before installation.
 
 To configure a DC/OS service to be on an overlay network, specify one under `ipAddress`:
 
@@ -189,12 +186,9 @@ Since the overlay network IP is only used by the task it's assigned to, no ports
 - Overlay networking does not work concurrently with Marathon-LB. If you need both IP-per-container and a remote proxy, use a VIP and a static HAProxy or nginx that proxies to the VIP.
 - If using docker container port mapping, ports cannot also be specified on the overlay IP address.
 - If ports are specified on the overlay IP address, Marathon needs to have access to the specified overlay network in order to perform health and readiness checks.
-
+- Marathon-LB does not currently work for services that are on an overlay network. This may change in the future.
 
 For more detail about overlay networks, see <https://dcos.io/docs/1.8/administration/overlay-networks/>
-
-> A separate ports/portMappings configuration is then disallowed.
-TODO: does this mean I can't use Mesos agent ports or VIPs when using an overlay network?
 
 ## Back to Index
 

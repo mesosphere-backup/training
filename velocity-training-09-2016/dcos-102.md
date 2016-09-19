@@ -19,7 +19,7 @@ Follow the platform-specific instructions in the UI for installing and configuri
 
 Use the Linux instructions if you're using a Linux VM for your workspace.
 
-TODO: do the Windows instructions work in GitBash?
+**WARNING**: The Windows install instructions aren't designed for a bash shell. If you're using Docker for Windows with GitBash, it might be easier to install the DC/OS CLI in Powershell.
 
 ## Log in
 
@@ -91,6 +91,6 @@ $ dcos marathon app stop minitwit
 $ dcos marathon app remove minitwit
 ```
 
-## Next Up
+## Back to Index
 
-[DC/OS 103 - Health Checks & SSH](dcos-103.md)
+[Velocity Training](README.md)

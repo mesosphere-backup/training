@@ -137,19 +137,48 @@ In production, not all machines in a cluster should be internet accessible. So y
 
 In the provided AWS clusters, the master nodes are internet accessible. So you can SSH into them and/or use them to proxy into agent nodes.
 
-- Download SSH private key to `~/.ssh/dcoskey`
+First, add the SSH key to your SSH agent:
+
+- Download or write SSH private key to `~/.ssh/dcoskey`
 - Set SSH private key permissions: `chmod 600 ~/.ssh/dcoskey`
-- Add SSH private key to SSH client: `ssh-add ~/.ssh/dcoskey`
-- SSH into remote machine: `ssh -A core@${MASTER_ADDRESS}`
+- Make sure the local SSH agent is running: `eval $(ssh-agent -s)`
+- Add SSH private key to SSH agent: `ssh-add ~/.ssh/dcoskey`
 
-To SSH into an agent:
+    If you get the error `Could not open a connection to your authentication agent.`, then start the SSH agent with `eval $(ssh-agent -s)` and then retry the previous command.
 
-- Follow above step to SSH into a master node
-- SSH into an agent: `ssh core@${AGENT_IP}`
+To SSH into a master node:
 
-TODO: show how to ssh with the dcos cli, including proxying through the master to a private agent
+```
+ssh -A core@${MASTER_IP}
+```
 
-https://dcos.io/docs/1.8/administration/sshcluster/
+The `-A` passes in the SSH agent config so the private key can be used while SSHed into the master node.
+
+To print a list of agent nodes (including IPs and Mesos Agent IDs):
+
+```
+dcos node
+```
+
+To SSH into an agent node from a master node:
+
+```
+ssh core@${AGENT_IP}
+```
+
+Alternatively, it's possible to use the DC/OS CLI to handle master node proxying for you:
+
+```
+dcos node ssh --master-proxy --mesos-id=${AGENT_ID}
+```
+
+To find the internal IP(s) of the public agent nodes:
+
+```
+dcos node --json | jq -r '.[] | select(.attributes.public_ip == "true") | .hostname'
+```
+
+For more SSH details, see <https://dcos.io/docs/1.8/administration/sshcluster/>
 
 ## Component Logs
 
