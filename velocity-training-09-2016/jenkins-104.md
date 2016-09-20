@@ -1,8 +1,74 @@
-## Jenkins 104 - Webhooks
+# Jenkins 104 - Build Triggers
+
+## SCM Polling
+
+Until now, the created builds have had to be triggered manually.
+
+One of the simplest ways to trigger builds is to poll the source repository for changes.
+
+To enable source repository polling:
+
+1. Select a job to open the job detail page
+1. Select `Configure` in the left nav to open the job configuration page
+1. Under `Build Triggers`, select `Poll SCM` to show the poll schedule section
+1. Under `Poll SCM`, enter a `Schedule` in cron syntax (e.g. `*/5 * * * *` for every 5 minutes)
+  - TODO: Github Rate Limit?
+1. Select `Save` to confirm changes and return to the job detail page
+
+The job will now automaticaly trigger within 5 minutes after pushing a new commit to the configured source repository.
+
+
+
+## Webhooks
 
 SCM Polling is definitely the most reliable and flexible way to trigger builds, but it's also a slow and causes unnecessary traffic, which may count against your GitHub rate limit.
 
 A more responsive alternative is to use webhooks. With webhooks, the source repository needs to be configured to know how to reach Jenkins. It then triggers immediate job execution whenever it relieves a new commit. While this is almost always better, it does require that Jenkins be publicly accessible, which comes with its complications and security risks.
+
+Enabling webhooks requires that Jenkins be accessible by GitHub without having to log into DC/OS.
+
+The normal method to enable this is to use Marathon-LB Virtual Hosts, which exposes a DC/OS service on an externally accessible web domain. Unfortunately, we don't have any domains available for this lab. So we'll have to improvise.
+
+Before making Jenkins publically accessible, it's probably a good idea to improve security first. If that's important to you, skip ahead to [DC/OS 105 - Security](dcos-105.md), set up Jenkins security, and come back.
+
+To make Jenkins accessible on the public agent node:
+
+1. Install Marathon-LB
+1. Export the current Jenkins service definition:
+
+    ```
+    dcos marathon app show jenkins > jenkins.json
+    ```
+1. Edit `jenkins.json`:
+    1. Remove status-only fields:
+        - `tasks`
+        - `version`
+        - `versionInfo`
+    1. Remove conflicting deprecated fields:
+        - `fetch`
+    1. Lookup the allocated ports:
+
+        ```
+        $ JENKINS_1_PORT=${cat jenkins.json | jq .portDefinitions[0].port}
+        $ JENKINS_2_PORT=${cat jenkins.json | jq .portDefinitions[1].port}
+        ```
+    1. Add labels to configure Marathon-LB's reverse proxy:
+
+        ```
+        "labels": {
+          ...
+          "HAPROXY_GROUP": "external",
+          "HAPROXY_0_PORT": "${JENKINS_1_PORT}",
+          "HAPROXY_1_PORT": "${JENKINS_2_PORT}",
+        }
+        ```
+1. Update the Jenkins service:
+
+    ```
+    dcos marathon app update jenkins < jenkins.json
+    ```
+
+Once the service deployment has completed, Jenkins should be accessible via HTTP on the public agent node IP using the first port from above. The second port is for HTTPS, which we haven't set up yet.
 
 To enable webhooks in GitHub:
 
@@ -109,3 +175,7 @@ Plugin:	GitHub Pull Request Plugin
 `Integrations & services`:
 `Jenkins (GitHub plugin`
 `http://ec2-52-37-28-43.us-west-2.compute.amazonaws.com/service/jenkins/github-webhook/`
+
+## Next Up
+
+[Jenkins 105 - Security](jenkins-105.md)

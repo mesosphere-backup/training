@@ -45,16 +45,6 @@ Training session at [Velocity NY, 2016](http://conferences.oreilly.com/velocity/
 1. Jenkins Intro (slides)
 1. [Jenkins 101 - Quickstart](jenkins-101.md)
 1. [Jenkins 102 - Pipelines](jenkins-102.md)
-1. [Jenkins 103 - Persistent Storage](jenkins-103.md)
-1. [Jenkins 104 - Webhooks](jenkins-104.md)
-1. [Jenkins 105 - Security](jenkins-105.md)
-
-**Extra**
-
-1. Docker Best Practices (slides)
-1. Deployment Strategies (slides)
-1. CI Best Practices (slides)
-1. Microservice Best Practices (slides)
 
 ## Resources
 
