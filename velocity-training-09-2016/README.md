@@ -19,6 +19,10 @@ Training session at [Velocity NY, 2016](http://conferences.oreilly.com/velocity/
 - Name (SSID): `Velocity 2016`
 - Password: `velocity` (all lower case)
 
+**Slides**
+
+<http://www.slideshare.net/KarlIsenberg/cicd-with-docker-dcos-and-jenkins>
+
 ## Agenda
 
 1. CI/CD Intro (slides)
