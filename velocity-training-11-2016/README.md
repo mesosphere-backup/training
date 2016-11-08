@@ -3,24 +3,21 @@
 Training session at [Velocity Amsterdam, 2016](http://conferences.oreilly.com/velocity/devops-web-performance-eu/public/schedule/detail/55530).
 
 - **Date**: Wed, 9 Nov and Thu 10 Nov
-- **Time**: 9:00am – 5:00pm
-- **Venue**: D201, rai, Europaplein, NL 1078 GZ, Amsterdam
+- **Time**: 9:30am – 5:30pm
+- **Venue**: D201 (2nd floor) in RAI, Europaplein, NL 1078 GZ, Amsterdam
 
-## Agenda
+## Setup
 
-### Day 1
+- Learn about the tooling [setup](setup.md)
+- See the background [resources](resources.md)
 
- - 101
- - manual build and deploy
- - example app with two containers
- - troubleshooting with cinf
+## Day 1
 
-### Day 2
+- Container [101](container-101.md): from finding images to introspection
+- Container [102](container-102.md): end to end containerized app
+- Container [103](container-103.md): deepdive (namespaces, cgroups, COW filesystems)
 
- - https://github.com/mhausenblas/zdd-lab
- - full CI/CD pipeline
- - example app (NEW)
+## Day 2
 
-## Resources
+See [DAY 2](DAY2/) directory for details
 
-See the [resources](resources.md) here.

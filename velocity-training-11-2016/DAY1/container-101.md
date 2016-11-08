@@ -114,16 +114,6 @@ $ docker pull ${DOCKER_USER}/nginx-hello-world:1.0.0
 Visit your container page on DockerHub: `https://hub.docker.com/u/${DOCKER_USER}/nginx-hello-world/`
 
 
-## Explore image content
-
-```
-$ docker run -d nginx:1.9
-$ docker ps
-$ docker export -o nginx-content.tar ${CONTAINER_ID}
-$ mkdir explore-image && mv nginx-content.tar explore-image/ && cd explore-image/
-$ tar -xvf nginx-content.tar
-```
-
 ## Clean up
 
 ```
