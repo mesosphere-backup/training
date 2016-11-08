@@ -13,9 +13,9 @@ Training session at [Velocity Amsterdam, 2016](http://conferences.oreilly.com/ve
 
 ## Day 1
 
-- Container [101](container-101.md): from finding images to introspection
-- Container [102](container-102.md): end to end containerized app
-- Container [103](container-103.md): deepdive (namespaces, cgroups, COW filesystems)
+- Container [101](DAY1/container-101.md): from finding images to introspection
+- Container [102](DAY1/container-102.md): end to end containerized app
+- Container [103](DAY1/container-103.md): deepdive (namespaces, cgroups, COW filesystems)
 
 ## Day 2
 

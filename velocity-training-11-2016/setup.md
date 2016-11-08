@@ -12,12 +12,12 @@
 
 - Bash Terminal (built in)
 - Git: [Homebrew](http://brew.sh/) + `brew install git`
-- Docker: [Mac Install Options](https://github.com/mesosphere/training/blob/master/velocity-training-09-2016/docker-install-mac.md)
+- Docker: [Mac Install Options](docker-install-mac.md)
 
 **Windows**
 
 - GitBash: <https://github.com/git-for-windows/git/releases/latest/>
-- Docker: [Windows Install Options](https://github.com/mesosphere/training/blob/master/velocity-training-09-2016/docker-install-windows.md)
+- Docker: [Windows Install Options](docker-install-windows.md)
 
 ## SaaS
 
