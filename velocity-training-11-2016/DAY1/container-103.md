@@ -24,6 +24,8 @@ $ cd minitwit
 
 ## Build Docker image
 
+Before you build the image, make sure that you add `EXPOSE 80` to the Dockerfile.
+
 ```
 $ docker build -t ${DOCKER_USER}/minitwit .
 ```
@@ -33,7 +35,7 @@ If you don't know your `DOCKER_USER`, see the instructions in [Container 101: Bu
 ## Run the app
 
 ```
-$ docker run -d --name minitwit ${DOCKER_USER}/minitwit
+$ docker run -d -P --name minitwit ${DOCKER_USER}/minitwit
 ```
 
 ## Discover container IP
