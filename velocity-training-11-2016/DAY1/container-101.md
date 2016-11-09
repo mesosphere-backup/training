@@ -25,7 +25,7 @@ $ exit
 ## Run daemon
 
 ```
-$ docker run -d --name my-nginx nginx
+$ docker run -d -P --name my-nginx nginx
 
 # list running containers
 $ docker ps
