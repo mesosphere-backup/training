@@ -113,7 +113,7 @@ $ docker push ${DOCKER_USER}/nginx-hello-world:1.0.0
 $ docker pull ${DOCKER_USER}/nginx-hello-world:1.0.0
 ```
 
-Visit your container page on DockerHub: `https://hub.docker.com/u/${DOCKER_USER}/nginx-hello-world/`
+Visit your container page on DockerHub: `https://hub.docker.com/r/${DOCKER_USER}/nginx-hello-world/`
 
 
 ## Clean up
