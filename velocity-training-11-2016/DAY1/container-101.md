@@ -2,6 +2,8 @@
 
 Tested with Docker engine v1.11, you might see unexpected results with 1.12 and above.
 
+Note that the commands shown below assume a bash shell (so, this does not work on the Windows command line!).
+
 ## Find images
 
 ```
