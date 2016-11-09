@@ -2,7 +2,7 @@
 
 Training session at [Velocity Amsterdam, 2016](http://conferences.oreilly.com/velocity/devops-web-performance-eu/public/schedule/detail/55530).
 
-- **Date**: Wed, 9 Nov and Thu 10 Nov
+- **Date**: Wed 9 Nov and Thu 10 Nov
 - **Time**: 9:30am – 5:30pm
 - **Venue**: D201 (2nd floor) in RAI, Europaplein, NL 1078 GZ, Amsterdam
 
