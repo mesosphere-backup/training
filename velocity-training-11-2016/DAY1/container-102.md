@@ -2,6 +2,8 @@
 
 In this lab we focus on the underlying technologies: namespaces, cgroups, and COW filesystems.
 
+Note that the following requires Linux, that is either natively or a VM running Linux.
+
 ## Install cinf
 
 We will use [cinf](https://github.com/mhausenblas/cinf) to explore namespaces and cgroups.
