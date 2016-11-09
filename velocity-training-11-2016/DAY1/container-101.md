@@ -64,7 +64,7 @@ $ docker inspect my-ubuntu
 $ docker rm -f my-ubuntu
 ```
 
-## Build  an image
+## Build an image
 
 ```
 $ mkdir -p demo/nginx

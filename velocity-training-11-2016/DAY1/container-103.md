@@ -28,7 +28,7 @@ $ cd minitwit
 $ docker build -t ${DOCKER_USER}/minitwit .
 ```
 
-If you don't know your `DOCKER_USER`, see the instructions in [Docker 101: Build Docker Image](dcos-102.md#build-docker-image).
+If you don't know your `DOCKER_USER`, see the instructions in [Container 101: Build an image](container-101.md#build-an-image).
 
 ## Run the app
 
