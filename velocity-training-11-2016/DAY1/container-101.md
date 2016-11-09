@@ -1,5 +1,7 @@
 # Container 101
 
+Tested with Docker engine v1.11, you might see unexpected results with 1.12 and above.
+
 ## Find images
 
 ```
