@@ -91,7 +91,7 @@ SPRING_DATASOURCE_PLATFORM=mysql
 EOF
 
 # start minitwit server
-$ docker run -d --name minitwit --env-file=minitwit.env karlkfi/minitwit
+$ docker run -d --name minitwit --env-file=minitwit.env ${DOCKER_USER}/minitwit
 ```
 
 ## Clean up
