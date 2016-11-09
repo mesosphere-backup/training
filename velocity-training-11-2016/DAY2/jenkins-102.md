@@ -73,8 +73,6 @@ New with pipelines is the ability to execute parallel tasks and wait for them to
 1. Select `Save` to confirm config changes and open the project detail page
 1. Select `Build Now` in the left nav
 
-![Pipeline Parallel](images/jenkins-pipeline-serial.png)
-
 **Warning**: This may exceed the default node memory and be terminated. If you see the following, you'll need to configure the Jenkins "nodes" more memory.
 
 > [Build] [91mKilled
