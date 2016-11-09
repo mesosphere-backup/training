@@ -106,8 +106,6 @@ Pipelines also have the ability to execute steps on multiple nodes in parallel.
 1. Select `Save` to confirm config changes and open the project detail page
 1. Select `Build Now` in the left nav
 
-TODO: pic
-
 Unfortunately, parallel node steps don't show up as seperate in the GUI yet.
 
 ## Artifacts & stashes
