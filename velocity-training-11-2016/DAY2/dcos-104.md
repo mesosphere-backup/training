@@ -30,11 +30,21 @@ $ cat > pkg-mysql.json << EOF
     "name": "mysql"
   },
   "mysql": {
-    "root_password": "root",
-    "database": {
-      "name": "minitwit",
-      "username": "minitwit",
-      "password": "minitwit"
+    "cpus": 0.3,
+    "mem": 512
+  },
+  "database": {
+    "name": "minitwit",
+    "username": "minitwit",
+    "password": "minitwit",
+    "root_password": "root"
+  },
+  "networking": {
+    "port": 3306,
+    "host_mode": true,
+    "external_access": {
+      "enable": false,
+      "external_access_port": 13306
     }
   }
 }
