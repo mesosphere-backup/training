@@ -59,21 +59,55 @@ Once installed, running, and ready, MySQL should be reachable inside the cluster
 
 By default, the MiniTwit service used in [DC/OS 103](dcos-103.md#readiness-checks) creates and uses an in-memory HyperSQL database (HSQLDB), but it can also be configured to use an external MySQL to preserve its data.
 
-To configure MiniTwit to use MySQL, a few environment variables need to be configured in the MiniTwit service definition:
+To configure MiniTwit to use MySQL, a few environment variables need to be configured in the MiniTwit service definition. For this, destroy the MiniTwit service and use the following service definition (either via the DC/OS CLI command `dcos marathon app add` or using the DC/OS UI):
 
 ```
-"env": {
-  "SPRING_DATASOURCE_URL": "jdbc:mysql://mysql.marathon.mesos:3306/minitwit?autoReconnect=true&useSSL=false",
-  "SPRING_DATASOURCE_USERNAME": "minitwit",
-  "SPRING_DATASOURCE_PASSWORD": "minitwit",
-  "SPRING_DATASOURCE_DRIVER-CLASS-NAME": "com.mysql.cj.jdbc.Driver",
-  "SPRING_DATASOURCE_PLATFORM": "mysql"
+{
+  "id": "/minitwit",
+  "instances": 1,
+  "cpus": 1,
+  "mem": 512,
+  "container": {
+    "docker": {
+      "image": "karlkfi/minitwit",
+      "forcePullImage": false,
+      "privileged": false,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 80,
+          "protocol": "tcp",
+          "name": "http-api"
+        }
+      ],
+      "network": "BRIDGE"
+    }
+  },
+  "acceptedResourceRoles": [
+    "slave_public"
+  ],
+  "requirePorts": true,
+  "healthChecks": [
+    {
+      "protocol": "TCP",
+      "gracePeriodSeconds": 30,
+      "intervalSeconds": 15,
+      "timeoutSeconds": 5,
+      "maxConsecutiveFailures": 2,
+      "portName": "http-api"
+    }
+  ],
+  "env": {
+    "SPRING_DATASOURCE_URL": "jdbc:mysql://mysql.marathon.mesos:3306/minitwit?autoReconnect=true&useSSL=false",
+    "SPRING_DATASOURCE_USERNAME": "minitwit",
+    "SPRING_DATASOURCE_PASSWORD": "minitwit",
+    "SPRING_DATASOURCE_DRIVER-CLASS-NAME": "com.mysql.cj.jdbc.Driver",
+    "SPRING_DATASOURCE_PLATFORM": "mysql"
+  }
 }
 ```
 
 These are standard Spring JDBC environment variables used to specify a DataSource. Spring will auto-generate the appropriate DataSource object and inject it into classes that require one.
-
-The updated service definition can be used to create a new MiniTwit service or update one that is already running.
 
 ## Service suspension
 
