@@ -7,7 +7,7 @@ The app is already containerized and published on Docker Hub, but as an exercise
 
 ## Fork repo
 
-1. Visit the GitHub repo in a browser: https://github.com/karlkfi/minitwit
+1. Visit the GitHub repo in a browser: https://github.com/mhausenblas/minitwit
 1. Select `Fork` to open the fork screen
 1. Select a user or organization to copy the repo into
 
@@ -29,8 +29,6 @@ Before you build the image, make sure that you add `EXPOSE 80` to the Dockerfile
 ```
 $ docker build -t ${DOCKER_USER}/minitwit .
 ```
-
-If you don't know your `DOCKER_USER`, see the instructions in [Container 101: Build an image](container-101.md#build-an-image).
 
 ## Run the app
 

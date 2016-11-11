@@ -1,4 +1,4 @@
-# DC/OS 104 Troubleshooting 
+# DC/OS 105 Troubleshooting 
 
 Why are the following apps not deploying or can not be launched? What's wrong with them and how can you fix them?
 

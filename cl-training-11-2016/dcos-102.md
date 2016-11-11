@@ -34,7 +34,7 @@ $ cat > minitwit.json << EOF
   "mem": 512,
   "container": {
     "docker": {
-      "image": "karlkfi/minitwit",
+      "image": "mhausenblas/minitwit",
       "forcePullImage": false,
       "privileged": false,
       "portMappings": [

@@ -62,12 +62,12 @@ For this lab, we'll be making a freestyle job to build MiniTwit.
 ![Jenkins Job Configuration](images/jenkins-job-config.png)
 
 1. Under `Source Code Management`, select Git to show the SCM section
-1. Under `Repositories`, enter a `Repository URL` (e.g. `http://github.com/karlkfi/minitwit`)
+1. Under `Repositories`, enter a `Repository URL` (e.g. `http://github.com/mhausenblas/minitwit`)
 1. Under `Build`, select `Add build step`, then `Execute shell`
 1. Under `Execute shell`, enter a build command:
 
     ```
-    docker build -t karlkfi/minitwit .
+    docker build -t mhausenblas/minitwit .
     ```
 1. Select `Save` to confirm config changes and open the project detail page
 
