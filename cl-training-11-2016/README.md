@@ -23,7 +23,7 @@ Training session at [Continuous Lifecycle, 2016](http://www.continuouslifecycle.
 
 ## Hands on 3
 
-TBD
+Walk through the [GitHub Stream Data](https://github.com/mesosphere/cassandra-kairosdb-tutorial) demo.
 
 ## Setup
 
