@@ -2,8 +2,8 @@
 
 Training session at [Continuous Lifecycle, 2016](http://www.continuouslifecycle.de/veranstaltung-5461-continuous-delivery-%26-zero-downtime-deployments-von-containern-mit-dc-os.html?id=5461).
 
-- **Date**: Mon 14 Nov
-- **Time**: 11am – 6pm
+- **Time**: Mon 14 Nov 2016, 11am – 6pm
+- **Venue**: Congress Center Rosengarten, Rosengartenplatz 2, 68161 Mannheim, Germany
 
 ## Hands on 1
 
