@@ -1,8 +1,9 @@
 # Container 101
 
-Tested with Docker engine v1.11, you might see unexpected results with 1.12 and above.
+If you're not familiar with Docker you might want to got through this lab. It has been tested with Docker engine v1.11,
+so you might see unexpected results with 1.12 and above.
 
-Note that the commands shown below assume a bash shell (so, this does not work on the Windows command line!).
+Note that the commands shown below assume a bash shell, in other words this does not work on the Windows command line!
 
 ## Find images
 
