@@ -1,6 +1,6 @@
 # Container 103
 
-In this lab we build and run a containerized application: MiniTwit.
+In this lab we build and run a containerized application: [MiniTwit](https://github.com/mhausenblas/minitwit).
 
 MiniTwit is a simple Twitter clone, written in Java and using a variety of technologies familiar to enterprise developers.
 The app is already containerized and published on Docker Hub, but as an exercise we're going to fork it, modify it, and publish our own version.
