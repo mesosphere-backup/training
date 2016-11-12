@@ -1,4 +1,4 @@
-# Continuous Delivery and Zero-Downtime Deployments with DC/OS
+# Continuous Delivery & Zero-Downtime Deployments with DC/OS
 
 Training session at [Continuous Lifecycle, 2016](http://www.continuouslifecycle.de/veranstaltung-5461-continuous-delivery-%26-zero-downtime-deployments-von-containern-mit-dc-os.html?id=5461).
 
