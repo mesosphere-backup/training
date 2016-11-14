@@ -37,7 +37,7 @@ EOF
 $ dcos package install jenkins --options=pkg-jenkins.json
 ```
 
-Once installed, running, and ready, the Jenkins GUI may be reached through the admin router at `http://${DCOS_ADDRESS}/service/jenkins/`.
+Once installed, running, and ready, the Jenkins GUI may be reached through the admin router at `http://${DCOS_DASHBOARD_URL}/service/jenkins/`.
 
 ![Jenkins Dashboard](images/jenkins-fresh-install.png)
 
