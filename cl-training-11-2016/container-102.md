@@ -1,4 +1,4 @@
-# Container 103
+# Container 102
 
 In this lab we build and run a containerized application: [MiniTwit](https://github.com/mhausenblas/minitwit).
 
