@@ -12,10 +12,10 @@ Training session at [Continuous Lifecycle, 2016](http://www.continuouslifecycle.
 - OPTIONAL: Container [103](container-103.md): Deep-dive into namespaces, cgroups, COW filesystems
 - DC/OS [101](dcos-101.md): GUI/Dashboard
 - DC/OS [102](dcos-102.md): CLI
-- DC/OS [103](dcos-103.md): Service Discovery
 
 ## Hands on 2
 
+- DC/OS [103](dcos-103.md): Service Discovery
 - DC/OS [104](dcos-104.md): Deployments
 - OPTIONAL: DC/OS [105](dcos-105.md): Troubleshooting
 - Jenkins [101](jenkins-101.md): Basics
