@@ -17,9 +17,9 @@ Training session at [Continuous Lifecycle, 2016](http://www.continuouslifecycle.
 
 - DC/OS [103](dcos-103.md): Service Discovery
 - DC/OS [104](dcos-104.md): Deployments
-- OPTIONAL: DC/OS [105](dcos-105.md): Troubleshooting
 - Jenkins [101](jenkins-101.md): Basics
 - Jenkins [102](jenkins-102.md): End-to-end CI/CD pipeline
+- OPTIONAL: DC/OS [105](dcos-105.md): Troubleshooting
 
 ## Hands on 3
 
