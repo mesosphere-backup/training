@@ -1,4 +1,4 @@
-# Continuous Integration, Delivery, and Deployment with Docker
+# Continuous Integration, Delivery, and Deployment with Docker and DC/OS
 
 Training session at [Velocity Amsterdam, 2016](http://conferences.oreilly.com/velocity/devops-web-performance-eu/public/schedule/detail/55530).
 
