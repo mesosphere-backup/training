@@ -21,7 +21,6 @@
 
 ## SaaS
 
-- DC/OS Community Slack Account: <http://chat.dcos.io/> `#qcon-2017` channel
 - GitHub Account: <https://github.com/>
 - Docker Hub Account: <https://hub.docker.com/>
 
