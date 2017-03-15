@@ -1,0 +1,27 @@
+{
+    "id": "influxdb",
+    "cpus": 0.5,
+    "mem": 200,
+    "constraints": [["hostname", "UNIQUE"]],
+    "acceptedResourceRoles": ["slave_public"],
+    "container":
+        {
+            "type": "DOCKER",
+            "docker":
+                {
+                    "image": "tutum/influxdb",
+                    "network": "BRIDGE",
+                    "portMappings":
+                        [
+                            {
+                                "hostPort": 0,
+                                "containerPort": 8083
+                            },
+                            {
+                                "hostPort": 0,
+                                "containerPort": 8086
+                            }
+                        ]
+                }
+        }
+}

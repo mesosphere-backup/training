@@ -1,0 +1,17 @@
+{
+    "id": "generator",
+    "instances": 3,
+    "mem": 32.0,
+    "cmd": "chmod u+x gen.sh ; [ ! -d /tmp/gen ] && mkdir -p /tmp/gen ; ./gen.sh /tmp/gen/index.html",
+    "cpus": 0.5,
+    "uris": [
+        "https://dl.dropboxusercontent.com/u/10436738/london-mug-09-2015/gen.sh"
+    ],
+    "constraints": [
+        [
+            "hostname",
+            "LIKE",
+            "10.0.3.114"
+        ]
+    ]
+}
